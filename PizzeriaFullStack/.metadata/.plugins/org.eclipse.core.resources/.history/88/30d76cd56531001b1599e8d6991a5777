@@ -1,0 +1,5 @@
+package io.pizzeria.domain;
+
+public class MenuItem {
+
+}

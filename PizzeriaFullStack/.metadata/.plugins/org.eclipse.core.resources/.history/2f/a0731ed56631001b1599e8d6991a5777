@@ -1,0 +1,5 @@
+package io.pizzeria.repositories;
+
+public class MenuItemRepository {
+
+}

@@ -1,0 +1,23 @@
+package io.pizzeria.exceptions;
+
+public class MenuItemIdentifierExceptionResponse {
+
+	/*
+	 * Fields
+	 */
+	private String menuItemIdentifier;
+	
+	/*
+	 * Constructors
+	 */
+	public MenuItemIdentifierExceptionResponse(String menuItemIdentifier) {
+		this.menuItemIdentifier = menuItemIdentifier;
+	}
+	
+	/*
+	 * Getters and setters
+	 */
+	
+	
+	
+}

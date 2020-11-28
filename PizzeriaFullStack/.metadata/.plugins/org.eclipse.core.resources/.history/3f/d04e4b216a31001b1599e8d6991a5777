@@ -1,0 +1,13 @@
+package io.pizzeria.repositories;
+
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
+
+import io.pizzeria.domain.MenuItem;
+
+@Repository
+public interface MenuItemRepository extends CrudRepository<MenuItem, Long>{
+
+	@Override
+	Iterable<MenuItem> findAllById(Iterable<Long> ids);
+}

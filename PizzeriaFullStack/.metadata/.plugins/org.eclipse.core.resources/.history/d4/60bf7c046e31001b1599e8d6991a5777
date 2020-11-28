@@ -1,0 +1,24 @@
+package io.pizzeria.services;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import io.pizzeria.domain.MenuItem;
+import io.pizzeria.repositories.MenuItemRepository;
+
+@Service
+public class MenuItemService {
+
+	@Autowired
+	private MenuItemRepository menuItemRepository;
+
+	/**
+	 * Service to save MenuItem
+	 * 
+	 * @param menuItem
+	 * @return
+	 */
+	public MenuItem saveOrUpdate(MenuItem menuItem) {
+		return menuItemRepository.save(menuItem);
+	}
+}

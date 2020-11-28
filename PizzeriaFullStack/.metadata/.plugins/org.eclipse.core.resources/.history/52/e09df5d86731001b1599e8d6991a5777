@@ -1,0 +1,5 @@
+package io.pizzeria.web;
+
+public class MenuItemController {
+
+}

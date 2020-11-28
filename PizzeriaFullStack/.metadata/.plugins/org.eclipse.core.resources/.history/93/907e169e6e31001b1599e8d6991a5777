@@ -1,0 +1,49 @@
+package io.pizzeria.web;
+
+import javax.validation.Valid;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import io.pizzeria.domain.MenuItem;
+import io.pizzeria.services.MapValidationErrorService;
+import io.pizzeria.services.MenuItemService;
+
+@RestController
+@RequestMapping("/api/pizza")
+public class MenuItemController {
+
+	@Autowired
+	private MenuItemService menuItemService;
+
+	@Autowired
+	private MapValidationErrorService mapValidationErrorService;
+
+	/**
+	 * A controller for handling createNewMenuItem requests. Will check for errors
+	 * then invoke the menu item service.
+	 * 
+	 * @param menuItem
+	 * @param result
+	 * @return ResponseEntity
+	 */
+	@PostMapping("")
+	public ResponseEntity<?> createNewMenuItem(@Valid @RequestBody MenuItem menuItem, BindingResult result) {
+
+		ResponseEntity<?> errorMap = mapValidationErrorService.mapValidation(result);
+
+		if (errorMap != null) {
+			return errorMap;
+		}
+
+		menuItem = menuItemService.saveOrUpdate(menuItem);
+
+		return new ResponseEntity<MenuItem>(menuItem, HttpStatus.CREATED);
+	}
+}

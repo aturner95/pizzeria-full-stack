@@ -1,0 +1,5 @@
+package io.pizzeria.exceptions;
+
+public class MenuItemIdentifierExceptionResponse {
+
+}

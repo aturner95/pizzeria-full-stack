@@ -1,0 +1,5 @@
+package io.pizzeria.services;
+
+public class MenuItemService {
+
+}
