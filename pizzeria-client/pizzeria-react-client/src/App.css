@@ -36,3 +36,17 @@
     transform: rotate(360deg);
   }
 }
+
+h1 {
+  color: red;
+}
+
+h3 {
+  font-size: 10%;
+  text-align: left;
+}
+
+p {
+  text-align: left;
+  color: grey;
+}
