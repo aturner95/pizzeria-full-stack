@@ -1,0 +1,1 @@
+INDEX VERSION 1.131+C:\Users\Andy\Documents\developmentFolder\workspaces\pizzeria-fullstack\PizzeriaFullStack\.metadata\.plugins\org.eclipse.jdt.core
