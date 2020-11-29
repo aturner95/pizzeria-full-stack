@@ -27,15 +27,17 @@ public class MenuItem {
 	private String menuItemIdentifier;
 
 	@NotBlank(message = "Menu item title is required")
-	private String menuItemTitle;
+	private String title;
 
-	private String menuItemDescription;
+	private String description;
 
 	@NotNull
-	private int menuItemPrice;
+	private int price;
 
 	@NotBlank(message = "Menu item type is required")
 	private String menuItemType;
+	
+	private int sequenceNumber;
 
 	private boolean isVegetarian;
 	
@@ -73,28 +75,28 @@ public class MenuItem {
 		this.menuItemIdentifier = menuItemIdentifier;
 	}
 
-	public String getMenuItemTitle() {
-		return menuItemTitle;
+	public String getTitle() {
+		return title;
 	}
 
-	public void setMenuItemTitle(String menuItemTitle) {
-		this.menuItemTitle = menuItemTitle;
+	public void setTitle(String title) {
+		this.title = title;
 	}
 
-	public String getMenuItemDescription() {
-		return menuItemDescription;
+	public String getDescription() {
+		return description;
 	}
 
-	public void setMenuItemDescription(String menuItemDescription) {
-		this.menuItemDescription = menuItemDescription;
+	public void setDescription(String description) {
+		this.description = description;
 	}
 
-	public int getMenuItemPrice() {
-		return menuItemPrice;
+	public int getPrice() {
+		return price;
 	}
 
-	public void setMenuItemPrice(int menuItemPrice) {
-		this.menuItemPrice = menuItemPrice;
+	public void setPrice(int price) {
+		this.price = price;
 	}
 
 	public String getMenuItemType() {
@@ -105,6 +107,14 @@ public class MenuItem {
 		this.menuItemType = menuItemType;
 	}
 
+	public int getSequenceNumber() {
+		return sequenceNumber;
+	}
+
+	public void setSequenceNumber(int sequenceNumber) {
+		this.sequenceNumber = sequenceNumber;
+	}
+	
 	public boolean isVegetarian() {
 		return isVegetarian;
 	}

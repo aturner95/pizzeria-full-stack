@@ -1,0 +1,153 @@
+package io.pizzeria.domain;
+
+import java.util.Date;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.PrePersist;
+import javax.persistence.PreUpdate;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+
+@Entity
+public class MenuItem {
+
+	/*
+	 * Fields
+	 */
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int id;
+
+	@NotBlank(message = "Menu item identifer is required")
+	@Column(updatable = false, unique = true)
+	private String menuItemIdentifier;
+
+	@NotBlank(message = "Menu item title is required")
+	private String menuItemTitle;
+
+	private String menuItemDescription;
+
+	@NotNull
+	private int menuItemPrice;
+
+	@NotBlank(message = "Menu item type is required")
+	private String menuItemType;
+
+	private boolean isVegetarian;
+	
+	private boolean isWithdrawn;
+
+	private Date createDate;
+
+	private Date updateDate;
+
+	/*
+	 * Constructors
+	 */
+
+	public MenuItem() {
+
+	}
+
+	/*
+	 * Getters and setters
+	 */
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getMenuItemIdentifier() {
+		return menuItemIdentifier;
+	}
+
+	public void setMenuItemIdentifier(String menuItemIdentifier) {
+		this.menuItemIdentifier = menuItemIdentifier;
+	}
+
+	public String getMenuItemTitle() {
+		return menuItemTitle;
+	}
+
+	public void setMenuItemTitle(String menuItemTitle) {
+		this.menuItemTitle = menuItemTitle;
+	}
+
+	public String getMenuItemDescription() {
+		return menuItemDescription;
+	}
+
+	public void setMenuItemDescription(String menuItemDescription) {
+		this.menuItemDescription = menuItemDescription;
+	}
+
+	public int getMenuItemPrice() {
+		return menuItemPrice;
+	}
+
+	public void setMenuItemPrice(int menuItemPrice) {
+		this.menuItemPrice = menuItemPrice;
+	}
+
+	public String getMenuItemType() {
+		return menuItemType;
+	}
+
+	public void setMenuItemType(String menuItemType) {
+		this.menuItemType = menuItemType;
+	}
+
+	public boolean isVegetarian() {
+		return isVegetarian;
+	}
+
+	public void setVegetarian(boolean isVegetarian) {
+		this.isVegetarian = isVegetarian;
+	}
+	
+	public boolean isWithdrawn() {
+		return isWithdrawn;
+	}
+
+	public void setWithdrawn(boolean isWithdrawn) {
+		this.isWithdrawn = isWithdrawn;
+	}
+
+	public Date getCreateDate() {
+		return createDate;
+	}
+
+	public void setCreateDate(Date createDate) {
+		this.createDate = createDate;
+	}
+
+	public Date getUpdateDate() {
+		return updateDate;
+	}
+
+	public void setUpdateDate(Date updateDate) {
+		this.updateDate = updateDate;
+	}
+
+	/*
+	 * Methods
+	 */
+	@PrePersist
+	protected void onCreate() {
+		this.createDate = new Date();
+	}
+
+	@PreUpdate
+	protected void onUpdate() {
+		this.updateDate = new Date();
+	}
+
+}

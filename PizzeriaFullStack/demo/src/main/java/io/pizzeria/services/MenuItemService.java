@@ -22,7 +22,7 @@ public class MenuItemService {
 	public MenuItem saveOrUpdate(MenuItem menuItem) {
 
 		try {
-			menuItem.setMenuItemIdentifier(menuItem.getMenuItemIdentifier().toUpperCase());
+			menuItem.setMenuItemIdentifier(menuItem.getMenuItemIdentifier().toUpperCase().trim());
 			return menuItemRepository.save(menuItem);
 		} catch (Exception ex) {
 			throw new MenuItemIdentifierException(
