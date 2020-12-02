@@ -37,14 +37,19 @@
   }
 }
 
+/* Page title e.g. Resturant, Home*/
 h1 {
   color: red;
 }
 
-h3 {
-  font-size: 10%;
+/* Section titles on menu e.g. Pizza*/
+h2 {
   text-align: left;
-  font-weight: bold;
+}
+
+/* Section titles on menu e.g. item titles*/
+h3 {
+  text-align: left;
 }
 
 p {

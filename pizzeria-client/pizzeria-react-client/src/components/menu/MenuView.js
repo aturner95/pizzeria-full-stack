@@ -35,15 +35,9 @@ class MenuView extends Component {
     return (
       <div className="menu-items">
         <div className="container">
-          <Link to={"/"}>Home</Link>
           <div className="row">
             <div className="col-md-4">
-              <h1 className="display-4 text-center">Menu</h1>
-            </div>
-          </div>
-          <div className="row">
-            <div className="col-md-4">
-              <h3 className="display-4 text-center">Starters</h3>
+              <h2 className="display-4 text-center">Starters</h2>
 
               {starters.map((menuItem) => (
                 <MenuItem key={menuItem.id} menuItem={menuItem} />
@@ -52,7 +46,7 @@ class MenuView extends Component {
           </div>
           <div className="row">
             <div className="col-md-4">
-              <h3 className="display-4 text-center">Pizza</h3>
+              <h2 className="display-4 text-center">Pizza</h2>
 
               {pizzas.map((menuItem) => (
                 <MenuItem key={menuItem.id} menuItem={menuItem} />
@@ -61,7 +55,7 @@ class MenuView extends Component {
           </div>
           <div className="row">
             <div className="col-md-4">
-              <h3 className="display-4 text-center">Anti-pasta</h3>
+              <h2 className="display-4 text-center">Anti-pasta</h2>
 
               {antiPastas.map((menuItem) => (
                 <MenuItem key={menuItem.id} menuItem={menuItem} />
